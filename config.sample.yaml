@@ -1,0 +1,17 @@
+sender_address: 'SENDERSENDERSENDER@gmail.com'
+sender_pass: 'SENDERSENDERSENDER'
+receiver_address: 'RECEIVERRECEIVER@gmail.com'
+default_subject: 'Service Status report'
+smtp_host: 'smtp.gmail.com'
+smtp_port: 587
+
+services:
+- service_name: Random_webserver
+  service_type: 'Webservice'
+  service_url: 'http://google.com'
+- service_name: Random_database
+  service_type: 'Database'
+  service_url: 'Random.database.io'
+  db_user: 'USERUSERUSER'
+  db_password: 'PASSPASSPASS'
+  db_name: 'DBNAMEDBNAME'
