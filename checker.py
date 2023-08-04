@@ -17,6 +17,13 @@ def check_services(services_list):
                         failure_list.append(services_dict)
             except:
                 failure_list.append(services_dict)
+        if services_dict['service_type'] == 'HttpCode':
+            try:
+                response = requests.get(services_dict['service_url'])
+                if response.status_code != 200:
+                    failure_list.append(services_dict)
+            except:
+                failure_list.append(services_dict)
         if services_dict['service_type'] == 'Database':
             try:
                 db = mysql.connector.connect(
