@@ -4,6 +4,7 @@ from email.mime.text import MIMEText
 import yaml
 import requests
 import mysql.connector
+import os
 
 def check_services(services_list):
     failure_list = []
@@ -75,7 +76,7 @@ table, th, td {
         payload += "</tr>"
     payload += "</table></body></html>"
     return payload
-with open('./config.yaml') as file:
+with open((os.path.join(os.path.abspath(os.path.dirname(__file__)),'./config.yaml'))) as file:
     config = yaml.load(file, Loader=yaml.FullLoader)
 
 sender_address = config['sender_address']
